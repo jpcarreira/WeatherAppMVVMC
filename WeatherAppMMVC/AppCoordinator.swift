@@ -12,6 +12,13 @@ class AppCoordinator: Coordinator {
         return UINavigationController(rootViewController: UIViewController())
     }()
     
+    lazy var onboardingCoordinator: OnboardingCoordinator = {
+        let onboardingCoordinator = OnboardingCoordinator(rootViewController: rootViewController)
+        addChildCoordinator(onboardingCoordinator)
+        onboardingCoordinator.parentCoordinator = self
+        return onboardingCoordinator
+    }()
+    
     let apiService: ApiService = {
         // TODO: decide which concrete implementation of ApiService should be created
         return ApiClient()
@@ -26,8 +33,6 @@ class AppCoordinator: Coordinator {
             return
         }
         
-        let onboardingCoordinator = OnboardingCoordinator(rootViewController: rootViewController)
-        addChildCoordinator(onboardingCoordinator)
         onboardingCoordinator.start()
         
         window.rootViewController = rootViewController
@@ -36,6 +41,11 @@ class AppCoordinator: Coordinator {
     
     override func finish() {
         // intentionally left blank
+    }
+    
+    func onboardingDidFinish() {
+        removeChildCoordinator(onboardingCoordinator)
+        weatherDisplay()
     }
     
     private func weatherDisplay() {

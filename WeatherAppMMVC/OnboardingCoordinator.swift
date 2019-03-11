@@ -3,6 +3,7 @@ import UIKit
 
 class OnboardingCoordinator: Coordinator {
     
+    weak var parentCoordinator: AppCoordinator?
     let rootViewController: UINavigationController
     let storyboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
     
@@ -26,7 +27,7 @@ class OnboardingCoordinator: Coordinator {
     }
     
     override func finish() {
-        // TODO: tell the parent coordinator we're done
+        parentCoordinator?.onboardingDidFinish()
     }
 }
 
