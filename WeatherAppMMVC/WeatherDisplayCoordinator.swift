@@ -4,10 +4,12 @@ import UIKit
 class WeatherDisplayCoordinator: Coordinator {
     
     let rootViewController: UINavigationController
-    let storyboard = UIStoryboard(name: "WeatherDisplay", bundle: nil)
+    let storyboard = UIStoryboard(name: "WeatherDisplay", bundle: Bundle.main)
+    let apiService: ApiService
     
-    init(rootViewController: UINavigationController) {
+    init(rootViewController: UINavigationController, apiService: ApiService) {
         self.rootViewController = rootViewController
+        self.apiService = apiService
     }
     
     override func start() {

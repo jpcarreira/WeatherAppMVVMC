@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6246687222358C0C00479661 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246687122358C0C00479661 /* WeatherService.swift */; };
+		6246687622358CFA00479661 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246687522358CFA00479661 /* ApiService.swift */; };
+		624668782235ED0600479661 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624668772235ED0600479661 /* OnboardingViewController.swift */; };
+		6246687A2235ED8700479661 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624668792235ED8700479661 /* OnboardingViewModel.swift */; };
+		6246687C2235F0A600479661 /* OnboardingViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246687B2235F0A600479661 /* OnboardingViewModelProtocols.swift */; };
+		6246687F2235F92C00479661 /* CGFloat+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246687E2235F92C00479661 /* CGFloat+Utils.swift */; };
+		624668812235F95C00479661 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624668802235F95C00479661 /* UIColor+Utils.swift */; };
 		624D464C22348C5E003DE038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624D464B22348C5E003DE038 /* AppDelegate.swift */; };
 		624D465322348C60003DE038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624D465222348C60003DE038 /* Assets.xcassets */; };
 		624D465622348C60003DE038 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624D465422348C60003DE038 /* LaunchScreen.storyboard */; };
@@ -30,6 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6246687122358C0C00479661 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		6246687522358CFA00479661 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		624668772235ED0600479661 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		624668792235ED8700479661 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		6246687B2235F0A600479661 /* OnboardingViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelProtocols.swift; sourceTree = "<group>"; };
+		6246687E2235F92C00479661 /* CGFloat+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Utils.swift"; sourceTree = "<group>"; };
+		624668802235F95C00479661 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		624D464822348C5E003DE038 /* WeatherAppMMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAppMMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624D464B22348C5E003DE038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		624D465222348C60003DE038 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +78,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6246687322358C2900479661 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6246687522358CFA00479661 /* ApiService.swift */,
+				6246687122358C0C00479661 /* WeatherService.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		6246687422358C3100479661 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Storage;
+			sourceTree = "<group>";
+		};
+		6246687D2235F90200479661 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6246687E2235F92C00479661 /* CGFloat+Utils.swift */,
+				624668802235F95C00479661 /* UIColor+Utils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		624D463F22348C5D003DE038 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +127,7 @@
 				624D466F22348F91003DE038 /* App */,
 				624D467022348F9D003DE038 /* Scenes */,
 				624D46892234915D003DE038 /* Services */,
+				6246687D2235F90200479661 /* Utils */,
 			);
 			path = WeatherAppMMVC;
 			sourceTree = "<group>";
@@ -127,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				624D467722349056003DE038 /* OnboardingCoordinator.swift */,
-				624D467922349068003DE038 /* Onboarding.storyboard */,
 				624D467B22349096003DE038 /* Models */,
 				624D467C2234909C003DE038 /* ViewModels */,
 				624D467D223490A6003DE038 /* ViewControllers */,
@@ -141,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				624D4680223490E4003DE038 /* WeatherDisplayCoordinator.swift */,
-				624D468322349102003DE038 /* WeatherDisplay.storyboard */,
 				624D4682223490EA003DE038 /* Models */,
 				624D46852234910A003DE038 /* ViewModels */,
 				624D468622349112003DE038 /* ViewControllers */,
@@ -161,6 +199,8 @@
 		624D467C2234909C003DE038 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				6246687B2235F0A600479661 /* OnboardingViewModelProtocols.swift */,
+				624668792235ED8700479661 /* OnboardingViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -168,6 +208,7 @@
 		624D467D223490A6003DE038 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				624668772235ED0600479661 /* OnboardingViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -182,6 +223,7 @@
 		624D467F223490B6003DE038 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				624D467922349068003DE038 /* Onboarding.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -217,6 +259,7 @@
 		624D46882234913E003DE038 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				624D468322349102003DE038 /* WeatherDisplay.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -224,6 +267,8 @@
 		624D46892234915D003DE038 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6246687322358C2900479661 /* Networking */,
+				6246687422358C3100479661 /* Storage */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -330,11 +375,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6246687F2235F92C00479661 /* CGFloat+Utils.swift in Sources */,
 				624D4681223490E4003DE038 /* WeatherDisplayCoordinator.swift in Sources */,
 				624D467422349008003DE038 /* Coordinator.swift in Sources */,
+				624668812235F95C00479661 /* UIColor+Utils.swift in Sources */,
 				624D467822349056003DE038 /* OnboardingCoordinator.swift in Sources */,
+				6246687C2235F0A600479661 /* OnboardingViewModelProtocols.swift in Sources */,
+				624668782235ED0600479661 /* OnboardingViewController.swift in Sources */,
+				6246687A2235ED8700479661 /* OnboardingViewModel.swift in Sources */,
 				624D464C22348C5E003DE038 /* AppDelegate.swift in Sources */,
+				6246687222358C0C00479661 /* WeatherService.swift in Sources */,
 				624D467622349018003DE038 /* AppCoordinator.swift in Sources */,
+				6246687622358CFA00479661 /* ApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

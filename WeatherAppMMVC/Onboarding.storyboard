@@ -10,25 +10,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="oJw-Ga-APQ">
             <objects>
-                <viewController id="lzL-bM-upd" sceneMemberID="viewController">
+                <viewController id="lzL-bM-upd" customClass="OnboardingViewController" customModule="WeatherAppMMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scn-sX-usD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Onboarding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-Os-WBM">
-                                <rect key="frame" x="115" y="128" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pga-6h-1pK">
+                                <rect key="frame" x="6" y="80" width="363" height="64.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pga-6h-1pK" firstAttribute="top" secondItem="pxG-O6-BJ5" secondAttribute="top" constant="60" id="5jp-LQ-UVR"/>
+                            <constraint firstAttribute="trailing" secondItem="pga-6h-1pK" secondAttribute="trailing" constant="6" id="QI5-G4-Qp4"/>
+                            <constraint firstItem="pga-6h-1pK" firstAttribute="leading" secondItem="scn-sX-usD" secondAttribute="leading" constant="6" id="ikj-mj-1JT"/>
+                            <constraint firstItem="pga-6h-1pK" firstAttribute="centerX" secondItem="scn-sX-usD" secondAttribute="centerX" id="uWf-sF-7gb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pxG-O6-BJ5"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="pga-6h-1pK" id="i5c-iz-CWn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAW-5T-dBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

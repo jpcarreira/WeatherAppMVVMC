@@ -12,6 +12,11 @@ class AppCoordinator: Coordinator {
         return UINavigationController(rootViewController: UIViewController())
     }()
     
+    let apiService: ApiService = {
+        // TODO: decide which concrete implementation of ApiService should be created
+        return ApiClient()
+    }()
+    
     init(window: UIWindow?) {
         self.window = window
     }
@@ -24,12 +29,12 @@ class AppCoordinator: Coordinator {
         let onboardingCoordinator = OnboardingCoordinator(rootViewController: rootViewController)
         addChildCoordinator(onboardingCoordinator)
 
-        let weatherDisplayCoordinator = WeatherDisplayCoordinator(rootViewController: rootViewController)
+        let weatherDisplayCoordinator = WeatherDisplayCoordinator(rootViewController: rootViewController, apiService: apiService)
         addChildCoordinator(weatherDisplayCoordinator)
 
         // TODO: decide which flow to start
-//        onboardingCoordinator.start()
-        weatherDisplayCoordinator.start()
+        onboardingCoordinator.start()
+//        weatherDisplayCoordinator.start()
         
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
