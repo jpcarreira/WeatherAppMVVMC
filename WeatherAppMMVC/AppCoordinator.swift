@@ -28,13 +28,7 @@ class AppCoordinator: Coordinator {
         
         let onboardingCoordinator = OnboardingCoordinator(rootViewController: rootViewController)
         addChildCoordinator(onboardingCoordinator)
-
-        let weatherDisplayCoordinator = WeatherDisplayCoordinator(rootViewController: rootViewController, apiService: apiService)
-        addChildCoordinator(weatherDisplayCoordinator)
-
-        // TODO: decide which flow to start
         onboardingCoordinator.start()
-//        weatherDisplayCoordinator.start()
         
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
@@ -42,5 +36,11 @@ class AppCoordinator: Coordinator {
     
     override func finish() {
         // intentionally left blank
+    }
+    
+    private func weatherDisplay() {
+        let weatherDisplayCoordinator = WeatherDisplayCoordinator(rootViewController: rootViewController, apiService: apiService)
+        addChildCoordinator(weatherDisplayCoordinator)
+        weatherDisplayCoordinator.start()
     }
 }

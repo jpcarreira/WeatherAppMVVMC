@@ -24,17 +24,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVz-Y8-id4">
+                                <rect key="frame" x="143" y="264.5" width="89" height="30"/>
+                                <state key="normal" title="Lorem ipsum"/>
+                                <connections>
+                                    <action selector="didPressContinueButton:" destination="lzL-bM-upd" eventType="touchUpInside" id="dew-FZ-NLY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pga-6h-1pK" firstAttribute="top" secondItem="pxG-O6-BJ5" secondAttribute="top" constant="60" id="5jp-LQ-UVR"/>
                             <constraint firstAttribute="trailing" secondItem="pga-6h-1pK" secondAttribute="trailing" constant="6" id="QI5-G4-Qp4"/>
                             <constraint firstItem="pga-6h-1pK" firstAttribute="leading" secondItem="scn-sX-usD" secondAttribute="leading" constant="6" id="ikj-mj-1JT"/>
+                            <constraint firstItem="jVz-Y8-id4" firstAttribute="centerX" secondItem="scn-sX-usD" secondAttribute="centerX" id="mra-tw-RZv"/>
+                            <constraint firstItem="jVz-Y8-id4" firstAttribute="top" secondItem="pga-6h-1pK" secondAttribute="bottom" constant="120" id="oZl-iZ-zeo"/>
                             <constraint firstItem="pga-6h-1pK" firstAttribute="centerX" secondItem="scn-sX-usD" secondAttribute="centerX" id="uWf-sF-7gb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pxG-O6-BJ5"/>
                     </view>
                     <connections>
+                        <outlet property="continueButton" destination="jVz-Y8-id4" id="6vr-MA-ivP"/>
                         <outlet property="descriptionLabel" destination="pga-6h-1pK" id="i5c-iz-CWn"/>
                     </connections>
                 </viewController>

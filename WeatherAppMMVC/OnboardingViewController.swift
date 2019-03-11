@@ -5,6 +5,8 @@ final class OnboardingViewController: UIViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    @IBOutlet weak var continueButton: UIButton!
+    
     var viewModel: OnboardingViewModelType! {
         didSet {
             viewModel.viewDelegate = self
@@ -21,6 +23,11 @@ final class OnboardingViewController: UIViewController {
     private func setupView() {
         navigationItem.title = viewModel.headerText
         descriptionLabel.text = viewModel.descriptionText
+        continueButton.setTitle(viewModel.continueButtonText, for: .normal)
+    }
+    
+    @IBAction func didPressContinueButton(_ sender: UIButton) {
+        viewModel.didPressContinueButton()
     }
 }
 

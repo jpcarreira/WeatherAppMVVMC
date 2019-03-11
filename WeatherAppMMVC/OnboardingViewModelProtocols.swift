@@ -22,9 +22,13 @@ protocol OnboardingViewModelType {
     
     var descriptionText: String { get }
     
+    var continueButtonText: String { get }
+    
     // events
     
-    func start() 
+    func start()
+    
+    func didPressContinueButton()
 }
 
 
@@ -35,7 +39,7 @@ protocol OnboardingViewModelType {
  */
 protocol OnboardingViewModelCoordinatorDelegate: class {
     
-    func didSelectClose()
+    func didPressContinue()
 }
 
 

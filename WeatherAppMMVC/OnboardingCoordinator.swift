@@ -7,7 +7,9 @@ class OnboardingCoordinator: Coordinator {
     let storyboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
     
     var onboardingViewModel: OnboardingViewModelType {
-        return OnboardingViewModel()
+        let onboardingViewModel = OnboardingViewModel()
+        onboardingViewModel.coordinatorDelegate = self
+        return onboardingViewModel
     }
 
     init(rootViewController: UINavigationController) {
@@ -24,6 +26,14 @@ class OnboardingCoordinator: Coordinator {
     }
     
     override func finish() {
-        rootViewController.popToRootViewController(animated: true)
+        // TODO: tell the parent coordinator we're done
+    }
+}
+
+
+extension OnboardingCoordinator: OnboardingViewModelCoordinatorDelegate {
+    
+    func didPressContinue() {
+        finish()
     }
 }

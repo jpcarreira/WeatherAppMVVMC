@@ -11,15 +11,23 @@ final class OnboardingViewModel {
 
 extension OnboardingViewModel: OnboardingViewModelType {
     
-    func start() {
-        viewDelegate?.changeBackgroundColor(UIColor.random())
-    }
-    
     var headerText: String {
         return "Weather App"
     }
     
     var descriptionText: String {
         return "A simple weather app demonstrating the power of MVVM-C"
+    }
+    
+    var continueButtonText: String {
+        return "Continue to App"
+    }
+    
+    func start() {
+        viewDelegate?.changeBackgroundColor(UIColor.random())
+    }
+    
+    func didPressContinueButton() {
+        coordinatorDelegate?.didPressContinue()
     }
 }
