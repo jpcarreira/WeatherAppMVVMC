@@ -21,7 +21,7 @@ final class OnboardingViewController: UIViewController {
     }
     
     private func setupView() {
-        navigationItem.title = viewModel.headerText
+        navigationItem.title = viewModel.titleText
         descriptionLabel.text = viewModel.descriptionText
         continueButton.setTitle(viewModel.continueButtonText, for: .normal)
     }

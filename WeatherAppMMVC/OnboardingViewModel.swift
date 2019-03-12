@@ -11,7 +11,7 @@ final class OnboardingViewModel {
 
 extension OnboardingViewModel: OnboardingViewModelType {
     
-    var headerText: String {
+    var titleText: String {
         return "Weather App"
     }
     

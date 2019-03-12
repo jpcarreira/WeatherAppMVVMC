@@ -1,7 +1,7 @@
 import UIKit
 
 /**
- This is the protocol the OnboardingViewModel should conform,
+ This is the protocol the OnboardingViewModel should conform to
  
  ## It should include:
  
@@ -12,25 +12,42 @@ import UIKit
  */
 protocol OnboardingViewModelType {
     
+    /**
+     delegates
+     */
+    
+    // reference to the view delegate (usualy is talking to the view controller)
     var viewDelegate: OnboardingViewModelViewDelegate? { get set }
     
+    // reference to the view delegate (usualy is talking to the coordinator)
     var coordinatorDelegate: OnboardingViewModelCoordinatorDelegate? { get set }
     
-    // datasource
+    /**
+     datasource
+     */
     
-    var headerText: String { get }
+    var titleText: String { get }
     
     var descriptionText: String { get }
     
     var continueButtonText: String { get }
     
-    // events
+    /**
+     events
+     */
     
     func start()
     
     func didPressContinueButton()
 }
 
+/**
+ Delegate protocol to communicate with the view controller
+ */
+protocol OnboardingViewModelViewDelegate: class {
+    
+    func changeBackgroundColor(_ color: UIColor)
+}
 
 /**
  Delegate protocol will handle any action that must be handled by the coordinator
@@ -40,13 +57,4 @@ protocol OnboardingViewModelType {
 protocol OnboardingViewModelCoordinatorDelegate: class {
     
     func didPressContinue()
-}
-
-
-/**
- Delegate protocol to communicate with the view controller
- */
-protocol OnboardingViewModelViewDelegate: class {
-    
-    func changeBackgroundColor(_ color: UIColor)
 }
