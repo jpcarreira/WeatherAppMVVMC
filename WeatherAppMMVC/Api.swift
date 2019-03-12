@@ -17,9 +17,18 @@ final class ApiClient: Api {
 
 final class MockApiClient: Api {
     
+    static let fakeWeatherData = [
+        CurrentWeatherApiData(cityName: "London", temperature: 6),
+        CurrentWeatherApiData(cityName: "Lisbon", temperature: 16),
+        CurrentWeatherApiData(cityName: "New York", temperature: 10),
+        CurrentWeatherApiData(cityName: "Dublin", temperature: 8),
+        CurrentWeatherApiData(cityName: "Paris", temperature: 12)
+    ]
+    
     func fetchCurrentWeather(for location: String, completion: @escaping (CurrentWeatherApiData) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-            let weatherData = CurrentWeatherApiData(cityName: "London", temperature: 6)
+            // TODO: move random index to a separate function
+            let weatherData = MockApiClient.fakeWeatherData[Int(arc4random_uniform(UInt32(MockApiClient.fakeWeatherData.count)))]
             completion(weatherData)
         }
     }

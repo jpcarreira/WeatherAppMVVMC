@@ -33,7 +33,9 @@ final class WeatherDisplayTableViewController: UITableViewController {
             cell = WeatherDisplayCell(style: .default, reuseIdentifier: WeatherDisplayTableViewController.weatherCellId)
         }
         
-        // TODO: decorate cell
+        let weatherData = viewModel.itemForRow(at: indexPath.row)
+        cell?.cityLabel.text = weatherData.city
+        cell?.temperatureLabel.text = weatherData.temperature
         
         return cell!
     }

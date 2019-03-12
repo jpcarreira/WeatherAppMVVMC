@@ -6,21 +6,25 @@ final class WeatherDisplayViewModel {
     
     private var service: WeatherApiService
     
-    private var isLoading: Bool = false
+    private var weatherData = [WeatherViewDataType]() {
+        didSet {
+            viewDelegate?.updateScreen()
+        }
+    }
+    
+    private var locations = ["Lisbon", "London", "New York"]
     
     init(service: WeatherApiService) {
         self.service = service
     }
     
     private func getWeatherData() {
-        isLoading = true
-        
-        // TODO: placeholder to test, this needs to go into child viewmodels
-        service.getCurrentWeather(for: "") { data in
-            self.isLoading = false
+        for location in locations {
+            service.getCurrentWeather(for: location) { data in
+                let weatherDataAtLocation = WeatherViewData(weatherData: data)
+                self.weatherData.append(weatherDataAtLocation)
+            }
         }
-        
-        viewDelegate?.updateScreen()
     }
 }
 
@@ -32,13 +36,11 @@ extension WeatherDisplayViewModel: WeatherDisplayViewModelType {
     }
     
     func numberOfItems() -> Int {
-        // TODO:
-        return 3
+        return weatherData.count
     }
     
-    func itemForRow(_ at: Int) -> WeatherViewDataType {
-        // TODO: placedholder
-        return WeatherViewData(weatherData: WeatherData(cityName: "Lisbon", temperature: 12))
+    func itemForRow(at index: Int) -> WeatherViewDataType {
+        return weatherData[index]
     }
     
     func start() {

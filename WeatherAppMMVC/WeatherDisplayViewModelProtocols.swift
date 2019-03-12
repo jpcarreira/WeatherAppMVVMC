@@ -31,7 +31,7 @@ protocol WeatherDisplayViewModelType {
     func numberOfItems() -> Int
     
     // gets a specific weather item
-    func itemForRow(_ at: Int) -> WeatherViewDataType
+    func itemForRow(at index: Int) -> WeatherViewDataType
     
     /**
     events
