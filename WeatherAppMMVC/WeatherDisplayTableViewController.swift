@@ -11,6 +11,15 @@ final class WeatherDisplayTableViewController: UITableViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
+    
+    private func setupView() {
+        navigationItem.title = viewModel.titleText
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfItems()
     }

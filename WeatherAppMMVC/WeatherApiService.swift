@@ -1,9 +1,9 @@
 class WeatherApiService {
     
-    let apiClient: ApiService
+    let apiService: Api
     
-    init(apiClient: ApiService) {
-        self.apiClient = apiClient
+    init(apiService: Api) {
+        self.apiService = apiService
     }
 }
 

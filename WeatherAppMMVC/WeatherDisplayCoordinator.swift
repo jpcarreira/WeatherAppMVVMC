@@ -5,16 +5,16 @@ class WeatherDisplayCoordinator: Coordinator {
     
     let rootViewController: UINavigationController
     let storyboard = UIStoryboard(name: "WeatherDisplay", bundle: Bundle.main)
-    let apiService: ApiService
+    let apiService: Api
     
     var weatherDisplayViewModel: WeatherDisplayViewModelType {
-        let weatherService = WeatherApiService(apiClient: apiService)
+        let weatherService = WeatherApiService(apiService: apiService)
         let weatherDisplayViewModel = WeatherDisplayViewModel(service: weatherService)
         weatherDisplayViewModel.coordinatorDelegate = self
         return weatherDisplayViewModel
     }
     
-    init(rootViewController: UINavigationController, apiService: ApiService) {
+    init(rootViewController: UINavigationController, apiService: Api) {
         self.rootViewController = rootViewController
         self.apiService = apiService
     }

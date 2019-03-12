@@ -19,7 +19,7 @@ class AppCoordinator: Coordinator {
         return onboardingCoordinator
     }()
     
-    let apiService: ApiService = {
+    let apiService: Api = {
         // TODO: decide which concrete implementation of ApiService should be created
         return ApiClient()
     }()
