@@ -20,8 +20,11 @@ class AppCoordinator: Coordinator {
     }()
     
     let apiService: Api = {
-        // TODO: decide which concrete implementation of ApiService should be created
-        return ApiClient()
+        if CommandLine.arguments.contains("-mockApi") {
+            return MockApiClient()
+        } else {
+            return ApiClient()
+        }
     }()
     
     init(window: UIWindow?) {

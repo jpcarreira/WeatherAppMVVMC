@@ -14,7 +14,12 @@ final class WeatherDisplayViewModel {
     
     private func getWeatherData() {
         isLoading = true
-        // TODO: call service to get weather data
+        
+        // TODO: placeholder to test, this needs to go into child viewmodels
+        service.getCurrentWeather(for: "") { data in
+            self.isLoading = false
+        }
+        
         viewDelegate?.updateScreen()
     }
 }

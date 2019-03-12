@@ -13,7 +13,9 @@ final class WeatherDisplayTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
+        viewModel.start()
     }
     
     private func setupView() {

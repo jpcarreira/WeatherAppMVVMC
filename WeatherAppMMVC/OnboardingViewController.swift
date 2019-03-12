@@ -16,8 +16,8 @@ final class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.start()
         setupView()
+        viewModel.start()
     }
     
     private func setupView() {
