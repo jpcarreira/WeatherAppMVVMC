@@ -30,6 +30,7 @@
 		625326F722372D6400B5F47A /* WeatherDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625326F622372D6400B5F47A /* WeatherDisplayViewModel.swift */; };
 		625326F922372F9500B5F47A /* WeatherViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625326F822372F9500B5F47A /* WeatherViewData.swift */; };
 		625326FC2237305D00B5F47A /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625326FB2237305D00B5F47A /* WeatherData.swift */; };
+		625326FF2237EA1300B5F47A /* WeatherDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625326FE2237EA1300B5F47A /* WeatherDisplayCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		625326F622372D6400B5F47A /* WeatherDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDisplayViewModel.swift; sourceTree = "<group>"; };
 		625326F822372F9500B5F47A /* WeatherViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewData.swift; sourceTree = "<group>"; };
 		625326FB2237305D00B5F47A /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		625326FE2237EA1300B5F47A /* WeatherDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDisplayCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				624D468322349102003DE038 /* WeatherDisplay.storyboard */,
+				625326FE2237EA1300B5F47A /* WeatherDisplayCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625326FF2237EA1300B5F47A /* WeatherDisplayCell.swift in Sources */,
 				6246687F2235F92C00479661 /* CGFloat+Utils.swift in Sources */,
 				625326F522372C2000B5F47A /* WeatherViewDataType.swift in Sources */,
 				624D4681223490E4003DE038 /* WeatherDisplayCoordinator.swift in Sources */,

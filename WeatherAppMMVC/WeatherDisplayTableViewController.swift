@@ -25,11 +25,13 @@ final class WeatherDisplayTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: WeatherDisplayTableViewController.weatherCellId) 
+        var cell = tableView.dequeueReusableCell(withIdentifier: WeatherDisplayTableViewController.weatherCellId) as? WeatherDisplayCell
         
         if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: WeatherDisplayTableViewController.weatherCellId)
+            cell = WeatherDisplayCell(style: .default, reuseIdentifier: WeatherDisplayTableViewController.weatherCellId)
         }
+        
+        // TODO: decorate cell
         
         return cell!
     }
