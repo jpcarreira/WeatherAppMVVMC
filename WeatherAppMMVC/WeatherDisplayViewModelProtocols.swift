@@ -49,6 +49,9 @@ protocol WeatherDisplayViewModelViewDelegate: class {
     
     // updates the screen when gets new weather data
     func updateScreen()
+    
+    // instructs the view to start/stop loading animation
+    func toggleLoadingAnimation(isAnimating: Bool)
 }
 
 

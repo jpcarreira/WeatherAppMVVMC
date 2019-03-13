@@ -5,6 +5,8 @@ final class WeatherDisplayTableViewController: UITableViewController {
  
     private static var weatherCellId = "WeatherCell"
     
+    private var activityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    
     var viewModel: WeatherDisplayViewModelType! {
         didSet {
             viewModel.viewDelegate = self
@@ -20,6 +22,12 @@ final class WeatherDisplayTableViewController: UITableViewController {
     
     private func setupView() {
         navigationItem.title = viewModel.titleText
+        
+        // TODO: move to UIView extension
+        activityIndicatorView.style = .whiteLarge
+        activityIndicatorView.backgroundColor = .gray
+        activityIndicatorView.center = tableView.center
+        view.addSubview(activityIndicatorView)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,5 +54,15 @@ extension WeatherDisplayTableViewController: WeatherDisplayViewModelViewDelegate
     
     func updateScreen() {
         tableView.reloadData()
+    }
+    
+    func toggleLoadingAnimation(isAnimating: Bool) {
+        tableView.isUserInteractionEnabled = !isAnimating
+        
+        if isAnimating {
+            activityIndicatorView.startAnimating()
+        } else {
+            activityIndicatorView.stopAnimating()
+        }
     }
 }

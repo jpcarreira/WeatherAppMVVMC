@@ -12,17 +12,28 @@ final class WeatherDisplayViewModel {
         }
     }
     
-    private var locations = ["Lisbon", "London", "New York"]
+    private var isLoading: Bool = false {
+        didSet {
+            viewDelegate?.toggleLoadingAnimation(isAnimating: isLoading)
+        }
+    }
+    
+    private var locations = ["Lisbon", "London", "New York", "Dublin"]
     
     init(service: WeatherApiService) {
         self.service = service
     }
     
     private func getWeatherData() {
+        isLoading = true
         for location in locations {
             service.getCurrentWeather(for: location) { data in
-                let weatherDataAtLocation = WeatherViewData(weatherData: data)
-                self.weatherData.append(weatherDataAtLocation)
+                if let data = data {
+                    let weatherDataAtLocation = WeatherViewData(weatherData: data)
+                    self.weatherData.append(weatherDataAtLocation)
+                }
+                
+                self.isLoading = false
             }
         }
     }
